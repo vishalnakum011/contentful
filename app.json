@@ -1,13 +1,14 @@
 {
-  "name": "Contentful Gatsby Starter",
-  "description": "Gatsby starter for a Contentful project.",
+  "name": "Vishal Nakum",
+  "description": "This is a personal site of Vishal Nakum.",
   "keywords": [
-    "contentful",
-    "gatsby",
-    "static",
-    "ssg"
+    "Vishal Nakum",
+    "vishal nakum",
+    "vishalnakum",
+    "nakumvishal",
+    "nakum"
   ],
-  "repository": "https://github.com/contentful-userland/gatsby-contentful-starter",
+  "repository": "https://github.com/vishalnakum011/contentful",
   "success_url": "/",
   "buildpacks": [
     {
