@@ -43,5 +43,16 @@ module.exports = {
         precachePages: [`/*`],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Vishal Nakum`,
+        short_name: `vishalnakum`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
   ],
 }
