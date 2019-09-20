@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+import MainGallary from '../components/MainGallary'
 
 class RootIndex extends React.Component {
   render() {
@@ -12,12 +13,15 @@ class RootIndex extends React.Component {
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
+
     return (
-      <Layout location={this.props.location} >
+      <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
           <div className="wrapper">
+            <h2 className="section-headline">@nakumsays</h2>
+            <blockquote className="twitter-tweet"><p lang="en" dir="ltr">Why most organization used agile approach? <a href="https://t.co/1xlvY5DNJI">pic.twitter.com/1xlvY5DNJI</a></p>&mdash; Vishalnakum (@Vishaln76914140) <a href="https://twitter.com/Vishaln76914140/status/1109784878126489600?ref_src=twsrc%5Etfw">March 24, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
@@ -28,6 +32,8 @@ class RootIndex extends React.Component {
                 )
               })}
             </ul>
+            <h2 className="section-headline">@Insta</h2>
+            <MainGallary posts={get(this, 'props.data.allInstagramContent')} />
           </div>
         </div>
       </Layout>
@@ -80,6 +86,33 @@ export const pageQuery = graphql`
               background: "rgb:000000"
             ) {
               ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+    allInstagramContent {
+      edges {
+        node {
+        link
+        caption{
+           text
+        }
+        localImage{
+            childImageSharp {
+                fluid(maxHeight: 500, maxWidth: 500 quality: 50) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+            }
+        }
+        images {
+            standard_resolution {
+              width
+              height
+              url
+            }
+            low_resolution{
+                url
             }
           }
         }

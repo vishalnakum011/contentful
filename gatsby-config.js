@@ -25,10 +25,23 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
-    }
+    },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: "4209502198.1677ed0.2747a2dca1b14a2cb0dde318734c05c5"
+      }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`],
+      },
+    },
   ],
 }
