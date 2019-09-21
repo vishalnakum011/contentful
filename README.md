@@ -1,6 +1,6 @@
 # Vishal Nakum Portfolio
 
-https://travis-ci.com/vishalnakum011/contentful.svg?branch=master
+![travis-ci](https://travis-ci.com/vishalnakum011/contentful.svg?branch=master)
 
 ![LandingPage](screenshot.png)
 
